@@ -69,7 +69,7 @@ var fileInput = React.createElement("input", {
 });
 
 var previewRef;
-const DropBox = ({ image }) => {
+const DropBox = ({ image="none" }) => {
   const [state, setState] = useState(null);
   previewRef = useRef();
   const dropBoxRef = useRef();
