@@ -1,0 +1,33 @@
+.Column {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: fit-content;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 23%; /* temp solution */
+  background-color: rgb(227, 238, 234);
+  margin: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.Column-Title {
+  display: flex;
+  width: 100%;
+  height: 2.7rem;
+  padding: 0.4rem;
+  background-color: rgb(54, 78, 90);
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.Column-Title :nth-child(2) {
+  margin-left: auto;
+  padding: 0 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Column-Drop {
+  height: 1rem;
+  /* background-color: chocolate; */
+}
