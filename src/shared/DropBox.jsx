@@ -59,6 +59,11 @@ var dropBox;
 var boxClass = "";
 var messageClass = "";
 
+const handleInpuChange = (event) => {
+  let files = event.target.files;
+  handleDroppedFiles(files);
+};
+
 var fileInput = React.createElement("input", {
   key: "mediainput",
   type: "file",
@@ -66,11 +71,12 @@ var fileInput = React.createElement("input", {
   name: "gallery",
   accept: "image/*",
   multiple: true,
+  onChange: handleInpuChange,
 });
 
 var previewRef;
-const DropBox = ({ image="none" }) => {
-  const [state, setState] = useState(null);
+const DropBox = ({ image = "none" }) => {
+  const [ , setState] = useState(null);
   previewRef = useRef();
   const dropBoxRef = useRef();
 
@@ -108,7 +114,7 @@ const DropBox = ({ image="none" }) => {
         {fileInput}
         <div className={`Drop-Box-Message`}>
           <img src={imageIcon} alt="File icon" />
-          <h2 className={`small`}>Click to upload files or drag them here</h2>
+          <h2 className={`small`}>Click to upload image or drag it here</h2>
         </div>
       </div>
     </>

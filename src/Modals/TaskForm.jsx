@@ -48,7 +48,7 @@ const TaskForm = ({
       let card = _gc[comp].cards[index];
       card.title = formTitle;
       card.desc = formDesc;
-      card.image = _gc.taskForm.image;
+      card.image = _gc.taskForm.image === 'none' ? image : _gc.taskForm.image;
     } else {
       _gc[comp].cards.push({
         stamp,
@@ -59,7 +59,7 @@ const TaskForm = ({
       });
     }
 
-    _gc.taskForm.image = "none";
+    _gc.taskForm.image = 'none';
     close();
   };
 
